@@ -1,5 +1,4 @@
 <template>
- <NuxtPage page-key="/" />
   <body>
    <h1>
     Home
