@@ -46,7 +46,10 @@ function startServer() {
     try {
       const query = 'SELECT * FROM "public"."storico" order by tme DESC'; // Sostituisci con la query SQL per ottenere i dati dal tuo database
       const { rows } = await postgresClient.query(query);
-      res.json(rows);
+      rows.forEach(row => {
+        row.tme = new Date(parseInt(row.tme));
+      });
+      res.json(rows);      
     } catch (error) {
       console.error('Errore durante il recupero dei dati:', error);
       res.status(500).json({ error: 'Errore durante il recupero dei dati' });
