@@ -4,10 +4,13 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --host 0.0.0.0",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "nuxt dev --host 0.0.0.0",
+    "postinstall": "nuxt prepare",
+    "runall": "npm-run-all --parallel dev:frontend dev:backend",
+    "dev:backend": "node backend/server.js",
+    "dev:frontend": "npm run dev -- --host 0.0.0.0"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
@@ -23,6 +26,7 @@
   },
   "devDependencies": {
     "@nuxt/examples-ui": "latest",
+    "npm-run-all": "^4.1.5",
     "nuxt": "^3.8.1",
     "vite-plugin-vuetify": "^2.0.3",
     "vuetify": "^3.5.9"
