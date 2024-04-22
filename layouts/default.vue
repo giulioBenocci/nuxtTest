@@ -8,7 +8,7 @@
         </template>
         -->
         <v-app-bar-title>
-          16Automazione
+          Dashboard Operativa
         </v-app-bar-title>
       
         <!-- Pulsanti visibili solo su schermi larghi -->
